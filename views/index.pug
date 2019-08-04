@@ -1,0 +1,39 @@
+extends layout
+
+block content
+  
+
+  main.recipes-list.container
+    h2.recipes-list__header Latest recipes
+    .row.no-gutters.d-flex.flex-row.justify-content-center
+      .col-sm-5.col-md-5
+        figure.recipe.recipes-list__figure
+          .recipe__bg
+            img.recipe__link-img(src='/images/Vegan-Sesame-Tofu-Fingers.jpg', alt='Vegan-tofu image ')
+          figcaption.recipe__figcaption.recipe__figcaption--time-static 20 min
+          figcaption.recipe__figcaption.recipe__figcaption--name Sesame tofu fingers
+      .col-sm-3.col-md-3
+        figure.recipe.recipes-list__figure
+          .recipe__bg
+            img.recipe__link-img(src='/images/Peanut-Butter-Turtle-Thumbprint-Cookies.jpg', alt='Butter-Turtle')
+          figcaption.recipe__figcaption.recipe__figcaption--time-static 40 min
+          figcaption.recipe__figcaption.recipe__figcaption--name Butter-Turtle
+      .col-sm-3.col-md-3
+        figure.recipe.recipes-list__figure
+          .recipe__bg
+            img.recipe__link-img(src='/images/shrimp-tacos.jpg', alt='Shrimp-tacos')
+          figcaption.recipe__figcaption.recipe__figcaption--time-static 30 min
+          figcaption.recipe__figcaption.recipe__figcaption--name Shrimp tacos
+  .container-fluid
+    .row.no-gutters
+      each item, index in data
+        .col-sm-4
+          figure.recipe.recipes-list__figure
+            a.link.recipe__link(href=`/details/${item._id}`)
+              .recipe__bg
+                img.recipe__link-img(src=item.imageUrl, alt=item.name)
+            figcaption.recipe__figcaption.recipe__figcaption--time=item.time+' min'
+            figcaption.recipe__figcaption.recipe__figcaption--name=item.name
+      
+      
+      

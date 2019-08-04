@@ -1,0 +1,24 @@
+extends layout
+
+block content
+
+  each item in recipes
+    main.recipes-list--details
+      .container
+        .row.d-flex.flex-row.justify-content-between
+          .col-md-6.mt-4.order-1
+            figure.recipe.recipes-list__figure
+              a.link.recipe__link
+                .recipe__bg
+                  img.recipe__link-img(src=item.imageUrl, alt=item.name)
+                  figcaption.recipe__figcaption.recipe__figcaption--time=item.time+' min'
+                  figcaption.recipe__figcaption.recipe__figcaption--name=item.name
+            p.recipes-list__description.text-left=item.description
+          .col-md-6.mt-4.order-3
+            h3 Preparing
+            p.recipes-list__preparing.text-left=item.preparing
+          .col-md-6.mt-4.order-2
+            button.btn.btn-outline-warning.btn-md.col-3.mb-4(type='button') Edit
+            h3 Ingredients
+            p.recipes-list__ingredients.text-left.w-50=item.ingredients
+            

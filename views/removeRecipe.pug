@@ -1,0 +1,23 @@
+extends layout
+
+block content
+
+  main.recipes-list
+    .container-fluid
+      .row.d-flex.flex-row.justify-content-center
+        
+        .col.mt-4
+          h2.recipes-list__header.recipes-list__header--red.text-center Remove recipe
+            table.table.mt-5
+                tr.table__row
+                  th.table__header(scope='col') #
+                  th.table__header(scope='col') Name
+                  th.table__header(scope='col') Added date
+                  th.table__header(scope='col') Action
+                each item, index in recipes
+                  tr.table__row
+                    td.table__data=index
+                    td.table__data=item.name
+                    td.table__data=item.date
+                    td.table__data
+                      a.table__data--action(href=`removeRecipe/${item._id}`) Delete

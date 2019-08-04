@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title Recipe app
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  body
+    nav.navbar.navbar-dark.bg-warning.navbar-expand-sm
+      a.navbar-brand(href='/index')
+        img.navbar-brand__img(src='/images/logo.png', alt='Logo')
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='.navbar-collapse', aria-controls='navbar-collapse', aria-expanded='false')
+        span.navbar-toggler-icon
+      .collapse.navbar-collapse
+        ul.navbar__item-list.list-unstyled.d-flex.flex-column.flex-sm-row.justify-content-sm-around.m-sm-auto
+          li.navbar__item.align-self-center
+            a.link.navbar__link(href='/addRecipe') Add recipe
+          li.navbar__item.align-self-center
+            a.link.navbar__link(href='/removeRecipe') Remove recipe
+    block content
+    script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js", integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo", crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js", integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1", crossorigin="anonymous")
+    script(src="/javascripts/bootstrap.min.js")

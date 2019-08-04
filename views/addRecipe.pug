@@ -1,0 +1,36 @@
+extends layout
+
+block content
+
+  main.recipes-list
+  .container
+    .row.d-flex.justify-content-center
+      h2.recipes-list__header.recipes-list__header--green.text-center Please add your recipe
+  form(method='post' enctype="multipart/form-data")
+    .row.d-flex.justify-content-around
+      .col-sm-6
+        .form-control
+          label Select your recipe image
+          input.form-control-file(type='file' name='image' value='url' accept='image/x-png,image/jpeg' required) 
+      .col-sm-3
+        .form-control
+          label Recipe name
+          input(type='text' name='name' class='form-control form-control--border-display' required)
+      .col-sm-3
+        .form-control
+          label Recipe time
+          input(type='number' name='time' class='form-control form-control--border-display' required)
+    .col-md-3
+      .form-control
+        label Ingredients
+        textarea.form-control.form-control--border-display(rows='5' name='ingredients' required)
+    .col
+      .form-control
+        label Preparing
+        textarea.form-control.form-control--border-display(rows='5' name='preparing' required)
+    .col
+      .form-control
+        label Description
+        textarea.form-control.form-control--border-display(rows='5' name='description' required)
+    .d-flex.justify-content-center      
+      input.btn.btn-success(type='submit' value='Submit')
